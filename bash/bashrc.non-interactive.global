@@ -38,7 +38,7 @@ if [ "$TERM" = "xterm" ]; then
                 TERM="gnome-256color"
                 ;;
             *)
-                echo "Warning: Unrecognized COLORTERM: $COLORTERM"
+                #echo "Warning: Unrecognized COLORTERM: $COLORTERM"
                 ;;
         esac
     fi
