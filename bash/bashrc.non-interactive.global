@@ -9,6 +9,9 @@ export GIT_CEILING_DIRECTORIES="/home"
 
 [ -d "$HOME/bin" ] &&				export PATH="$HOME/bin:$PATH"
 
+[ -f "$HOME/.screenrc.local" ]     &&	export SCREENRC="$HOME/.screenrc.local"
+[ -f "$HOME/.screenrc.$HOSTNAME" ] &&	export SCREENRC="$HOME/.screenrc.$HOSTNAME"
+
 # Try to set $TERM correctly
 if [ "$TERM" = "xterm" ]; then
     if [ -z "$COLORTERM" ]; then
