@@ -1,2 +1,5 @@
 *.pyc
 vim/vim/.netrwhist
+vim/vim/spell/*
+vim/tags/*
+vim/view/*
