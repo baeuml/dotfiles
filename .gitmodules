@@ -34,3 +34,6 @@
 [submodule "vim/vim/bundle/snipmate"]
 	path = vim/vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/vim/bundle/pep8"]
+	path = vim/vim/bundle/pep8
+	url = https://github.com/vim-scripts/pep8.git
