@@ -35,6 +35,7 @@ export LESS="-FSRX"
 # make grep use colors
 export GREP_OPTIONS='--color=auto'
 alias 'cgrep=grep --color=always'
+export MAKEFLAGS="-j4"
 
 # enable color support of ls and also add handy alias
 if [ "$TERM" != "dumb" ]; then
