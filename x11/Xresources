@@ -1,3 +1,9 @@
+!! Emacs
+Emacs.toolBar: 0
+Emacs.FontBackend: xft
+Emacs.font: Bitstream Vera Sans Mono-11
+
+!!Emacs.font:		-adobe-courier-medium-r-*-*-*-140-*-*-m-*-iso8859-*
 xterm*scrollBar:        false
 xterm*background:       white
 xterm*termName:         xterm-256color
