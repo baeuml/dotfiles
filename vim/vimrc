@@ -198,6 +198,13 @@ vnoremap <end>      <nop>
 vnoremap <insert>   <nop>
 vnoremap <delete>   <nop>
 
+" less keystrokes for saving
+nnoremap ; :
+
+" move more natural in wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " Disable F1 for help
 inoremap <f1> <nop>
 nnoremap <f1> <nop>
@@ -216,6 +223,7 @@ nnoremap <silent> <C-h> :bp<CR>
 "" insert timestamp at point
 nmap <F3> a<C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR><Esc>
 imap <F3> <C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
