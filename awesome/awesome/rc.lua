@@ -16,7 +16,8 @@ local ctrlkey       = "Control"
 local home          = os.getenv("HOME")
 local exec          = awful.util.spawn
 local sexec         = awful.util.spawn_with_shell
-local terminal      = "gnome-terminal"
+local terminal      = "konsole"
+local lock_cmd      = "xlock -mode blank"
 local editor        = "vim"
 local editor_cmd    = terminal .. " -e " .. editor
 
@@ -72,7 +73,7 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 mytextclock = awful.widget.textclock({ align = "right" })
 
 -- {{{ Systray
--- mysystray = widget({ type = "systray" })
+mysystray = widget({ type = "systray" })
 -- }}}
 
 -- Create a wibox for each screen and add it
@@ -144,8 +145,8 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        -- mytextclock,
-        -- s == 1 and mysystray or nil,
+        mytextclock,
+        s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
@@ -191,15 +192,18 @@ globalkeys = awful.util.table.join(
                 client.focus:raise()
             end
         end),
+
+    -- Standard program
+    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey, "Control" }, "r", awesome.restart),
+    awful.key({ modkey, "Shift"   }, "q", awesome.quit),
+    
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-
-    -- Standard programs
-    awful.key({ modkey }, "Return",                 function () awful.util.spawn(terminal) end),
 
     -- Session control
     awful.key({ modkey, ctrlkey, shiftkey }, "r",   awesome.restart),
@@ -215,7 +219,10 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+
+    -- Screen Lock
+    awful.key({ modkey,           }, "a",     function () awful.util.spawn(lock_cmd) end)
 )
 
 -- Default client window keybindings
