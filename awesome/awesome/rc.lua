@@ -7,8 +7,6 @@ require("naughty")
 --- }}}
 
 -- {{{ Variable definitions
--- Theme
-beautiful.init("/home/mfischer/.dotfiles/awesome/awesome/themes/zoop/theme.lua")
 
 -- Shortcuts
 local altkey        = "Mod1"
@@ -21,6 +19,9 @@ local sexec         = awful.util.spawn_with_shell
 local terminal      = "gnome-terminal"
 local editor        = "vim"
 local editor_cmd    = terminal .. " -e " .. editor
+
+-- Theme
+beautiful.init(home .. "/.dotfiles/awesome/awesome/themes/zoop/theme.lua")
 
 -- Layouts
 layouts =
