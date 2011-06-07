@@ -309,16 +309,12 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
-    { rule = { class = "Skype" },
-      properties = { floating = true } },
     { rule = { class = "Git-gui" },
       properties = { maximized_horizontal = true,
                      maximized_vertical   = true } },
     { rule = { class = "Git-citool" },
       properties = { maximized_horizontal = true,
                      maximized_vertical   = true } },
-    { rule = { class = "Pidgin" },
-      properties = { floating = true } },
 }
 -- }}}
 
