@@ -328,6 +328,7 @@ client.add_signal("manage", function (c, startup)
     -- Add a titlebar
     -- awful.titlebar.add(c, { modkey = modkey })
 
+--[[
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)
         if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
@@ -335,6 +336,7 @@ client.add_signal("manage", function (c, startup)
             client.focus = c
         end
     end)
+--]]
 
     if not startup then
         -- Set the windows at the slave,
