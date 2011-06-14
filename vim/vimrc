@@ -279,3 +279,9 @@ let g:yankring_history_file = '.vim_yankring_history'
 " pydiction
 let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
 
+" pyflakes
+let g:pyflakes_use_quickfix = 0
+
+" pep8
+let g:pep8_map='<leader>8'
+
