@@ -34,3 +34,6 @@
 [submodule "vim/vim/bundle/pep8"]
 	path = vim/vim/bundle/pep8
 	url = https://github.com/vim-scripts/pep8.git
+[submodule "vim/vim/bundle/pyflakes-vim"]
+	path = vim/vim/bundle/pyflakes-vim
+	url = git://github.com/kevinw/pyflakes-vim.git
