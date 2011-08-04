@@ -16,6 +16,8 @@
 	ci = commit
 	st = status
 	br = branch
+	su = submodule update --init --recursive
+	psu = !git pull && git su
 
 [merge]
 	tool = vimdiff
