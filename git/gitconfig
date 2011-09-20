@@ -16,6 +16,7 @@
 	ci = commit
 	st = status
 	br = branch
+	sm = submodule
 	su = submodule update --init --recursive
 	psu = !git pull && git su
 
