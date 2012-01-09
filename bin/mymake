@@ -35,7 +35,7 @@ set -e
 ###############################################################################
 # Default values
 ###############################################################################
-MODULE_DIRS="$HOME/src"
+MODULE_DIRS="$HOME/src $HOME/kit/src"
 BUILD_DEBUG=
 BUILD_RELEASE=1
 BUILD_MODULES=
