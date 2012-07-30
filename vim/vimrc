@@ -153,9 +153,6 @@ if has("autocmd")
     au BufNewFile,BufRead *.swg set filetype=swig 
 endif
 
-" build tags with <F12>
-map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ..<CR>
-
 "" ==========================================================
 "" Key bindings
 "" ==========================================================
@@ -240,41 +237,21 @@ nnoremap <leader>nf :NERDTreeFind<cr>
 "" FuzzyFinder
 nnoremap <C-p> :FuzzyFinderFile<CR> 
 
-"" OmniCPPcomplete
-" configure tags - add additional tags here or comment out not-used ones
-set tags+=~/.vim/tags/stl
-set tags+=~/.vim/tags/qt
-set tags+=~/.vim/tags/opencv
-set tags+=~/.vim/tags/okapi
-
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
-
-" OmniCPP options
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_MayCompleteDot = 1
-let OmniCpp_MayCompleteArrow = 1
-let OmniCpp_MayCompleteScope = 1
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-
 " YankRing
 let g:yankring_history_file = '.vim_yankring_history'
 
 " Clang-complete
-" let g:clang_complete_auto = 1
-" let g:clang_complete_copen = 1
-" let g:clang_hl_errors = 1
-" let g:clang_periodic_quickfix = 0
-" let g:clang_snippets = 0
-" " g:clang_conceal_snippets:
-" let g:clang_exec = 'clang'
-" let g:clang_user_options = ''
-" let g:clang_auto_user_options = 'path, .clang_complete'
-" let g:clang_use_library = 1
-" let g:clang_library_path = '/usr/local/lib'
+let g:clang_complete_auto = 1
+let g:clang_complete_copen = 1
+let g:clang_hl_errors = 1
+let g:clang_periodic_quickfix = 0
+let g:clang_snippets = 0
+" g:clang_conceal_snippets:
+let g:clang_exec = 'clang'
+let g:clang_user_options = ''
+let g:clang_auto_user_options = 'path, .clang_complete'
+let g:clang_use_library = 1
+let g:clang_library_path = '/usr/local/lib'
 
 " pydiction
 let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
