@@ -230,7 +230,7 @@ imap <F3> <C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR>
 let g:miniBufExplorerMoreThanOne = 1
 
 " NERDTree options
-let NERDTreeIgnore = ['\~$', '\.pyc$']
+let NERDTreeIgnore = ['\~$', '\.pyc$', '\.o$']
 nnoremap <leader>nt :NERDTree 
 nnoremap <leader>nb :NERDTreeBookmark 
 nnoremap <leader>nn :NERDTreeToggle<cr>
