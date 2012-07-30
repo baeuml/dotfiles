@@ -2,7 +2,7 @@
 	name = Martin Baeuml
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /home/baeuml/.gitignore
 
 [color]
 	ui = auto
