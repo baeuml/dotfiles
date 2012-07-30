@@ -5,4 +5,4 @@ set passkeys+='https?://mail.google.com/mail/':aAbcdefFghHiIjklLmnNopqrRsStTuUvw
 set passkeys+='https?://www.google.com/reader/view':jkoOJKnpNPXfu/Amv?
 set passkeys+='https?://www.nirvanahq.com/app':1234567890nipdhl!q
 set passkeys+='https?://app.nirvanahq.com/':1234567890nipdhl!q
-set passkeys+='https?://www.evernote.com/':abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789*/?`!#[]{}.;&:<SPACE>
+set passkeys+='https?://www.evernote.com/':abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*/?`!#[]{}.;&:<SPACE>
