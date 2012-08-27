@@ -17,6 +17,7 @@ if [ "$TERM" = "xterm" ]; then
     if [ -z "$COLORTERM" ]; then
         if [ -z "$XTERM_VERSION" ]; then
             #echo "Warning: Terminal wrongly calling itself 'xterm'."
+            TERM="xterm-256color"
             true;
         else
             case "$XTERM_VERSION" in
