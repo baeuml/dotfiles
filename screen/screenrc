@@ -1,0 +1,12 @@
+startup_message off
+hardstatus alwayslastline "%{bk} [ %H ] %{-b}%{gk} %c:%s | %d.%m.%Y %{wk} %-w%{rk}%50>%n %t%{-}%+w%<"
+vbell		off	
+defscrollback	3000
+
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on" 
+
+#term "screen-256color"
