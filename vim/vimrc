@@ -66,8 +66,15 @@ set whichwrap=<,>,h,l
 set wmh=0
 set wrapmargin=0
 set wildmenu            " nicer completion
-set wildmode=list:longest
+"set wildmode=list:longest
 set wildchar=<TAB>		" expands wildchars
+set wildignore+=.hg,.git,.svn " Version control
+set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl " compiled spelling word lists
+set wildignore+=*.sw? " Vim swap files
+set wildignore+=*.DS_Store " OSX bullshit
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
