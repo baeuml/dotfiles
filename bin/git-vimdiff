@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#echo BLUB ${GIT_EXTERNAL_DIFF}
+
+if [[ -n "${GIT_EXTERNAL_DIFF}" ]]
+then
+	if [[ ! "${GIT_EXTERNAL_DIFF}" = "${0}" ]]
+	then
+		echo "GIT_EXTERNAL_DIFF set to unexpected value" 1>&2
+		exit 1
+	fi
+	exec vimdiff "$2" "$5"
+else
+	GIT_EXTERNAL_DIFF="${0}" exec git --no-pager diff "$@"
+fi
