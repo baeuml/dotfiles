@@ -5,11 +5,19 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+filetype plugin indent on
+
+" -- let vundle manage itself
+Bundle 'gmarik/vundle'
 
 " Pathogen
-filetype off
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
+"call pathogen#runtime_append_all_bundles()
+"filetype plugin indent on
 
 "set cpoptions=cesWy
 set autoindent			" auto-indenting
