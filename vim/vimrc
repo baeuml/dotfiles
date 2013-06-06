@@ -12,13 +12,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 filetype plugin indent on
 
-" -- let vundle manage itself
-Bundle 'gmarik/vundle'
-
-" Pathogen
-"call pathogen#runtime_append_all_bundles()
-"filetype plugin indent on
-
 "set cpoptions=cesWy
 set autoindent			" auto-indenting
 set autowrite 			" save before i.e. :make is called
@@ -239,8 +232,22 @@ imap <F3> <C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR>
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" MinibufExplorer options
+" -- let vundle manage itself
+Bundle 'gmarik/vundle'
+
+" -- autocompletion
+"Bundle 'Valloric/YouCompleteMe'
+"let g:ycm_confirm_extra_conf = 0 	" Don't ask if file should be loaded
+
+" -- git wrapper
+Bundle 'fugitive.vim'
+
+" -- show buffers
+Bundle 'minibufexplorerpp'
 let g:miniBufExplorerMoreThanOne = 1
+
+" -- c ifdef block highlighting
+Bundle 'ifdef-highlighting'
 
 " NERDTree options
 let NERDTreeIgnore = ['\~$', '\.pyc$', '\.o$']
@@ -250,11 +257,11 @@ nnoremap <leader>nn :NERDTreeToggle<cr>
 nnoremap <leader>nf :NERDTreeFind<cr>
 "let NERDTreeQuitOnOpen = 1
 
-"" FuzzyFinder
+" FuzzyFinder
+" -- L9 is a FuzzyFinder dependency
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 nnoremap <C-p> :FuzzyFinderFile<CR> 
-
-" YankRing
-let g:yankring_history_file = '.vim_yankring_history'
 
 " Clang-complete
 let g:clang_complete_auto = 1
@@ -269,11 +276,20 @@ let g:clang_auto_user_options = 'path, .clang_complete'
 let g:clang_use_library = 1
 
 " pydiction
+Bundle 'Pydiction'
 let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
 
 " pyflakes
+Bundle 'pyflakes.vim'
 let g:pyflakes_use_quickfix = 0
 
 " pep8
+Bundle 'pep8'
 let g:pep8_map='<leader>8'
+
+" -- easy LaTeX editing
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 
