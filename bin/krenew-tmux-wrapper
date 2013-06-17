@@ -7,5 +7,5 @@ tmux kill-server >/dev/null 2>&1
 tmux new -d
 
 while [ $(tmux ls 2>/dev/null | wc -l) -gt 0 ]; do
-    echo 3
+    sleep 3
 done
