@@ -250,6 +250,7 @@ let g:miniBufExplorerMoreThanOne = 1
 Bundle 'ifdef-highlighting'
 
 " NERDTree options
+Bundle 'scrooloose/nerdtree'
 let NERDTreeIgnore = ['\~$', '\.pyc$', '\.o$']
 nnoremap <leader>nt :NERDTree 
 nnoremap <leader>nb :NERDTreeBookmark 
@@ -292,4 +293,9 @@ Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+
+" -- outlines
+Bundle 'VOoM'
+map     <F10>           :VoomToggle latex<CR>
+let g:voom_tree_width=90
 
