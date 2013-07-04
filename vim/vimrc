@@ -303,3 +303,6 @@ let g:voom_tree_width=90
 Bundle 'davidbeckingsale/writegood.vim'
 autocmd BufNewFile,BufRead *.tex             setlocal spell spelllang=en complete+=k dictionary+=/usr/share/dict/words iskeyword+=: sw=4 ts=4|call writegood#enable()
 
+" javascript support
+Bundle 'scrooloose/syntastic'
+
