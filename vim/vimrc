@@ -1,15 +1,98 @@
-"" ==========================================================
-"" Options
-"" ==========================================================
+" vim:fdm=marker
 
-" Use Vim settings, rather then Vi settings (much better!).
+" Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-filetype off
 
-" Vundle
+" Vundle Plugin Config {{{
+
+" Call/setup Vundle {{{
+filetype off " filetype needs to be off for vundle config
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+" }}}
+
+" -- let vundle manage itself
+Bundle 'gmarik/vundle'
+
+" -- autocompletion
+"Bundle 'Valloric/YouCompleteMe'
+"let g:ycm_confirm_extra_conf = 0 	" Don't ask if file should be loaded
+
+" -- git wrapper
+Bundle 'fugitive.vim'
+
+" -- show buffers
+Bundle 'minibufexplorerpp'
+let g:miniBufExplorerMoreThanOne = 1
+
+" -- c ifdef block highlighting
+Bundle 'ifdef-highlighting'
+
+" NERDTree options
+Bundle 'scrooloose/nerdtree'
+let NERDTreeIgnore = ['\~$', '\.pyc$', '\.o$']
+nnoremap <leader>nt :NERDTree 
+nnoremap <leader>nb :NERDTreeBookmark 
+nnoremap <leader>nn :NERDTreeToggle<cr>
+nnoremap <leader>nf :NERDTreeFind<cr>
+"let NERDTreeQuitOnOpen = 1
+
+" FuzzyFinder
+" -- L9 is a FuzzyFinder dependency
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+nnoremap <C-p> :FuzzyFinderFile<CR> 
+
+" Clang-complete
+let g:clang_complete_auto = 1
+let g:clang_complete_copen = 1
+let g:clang_hl_errors = 1
+let g:clang_periodic_quickfix = 0
+let g:clang_snippets = 0
+" g:clang_conceal_snippets:
+let g:clang_exec = 'clang'
+let g:clang_user_options = ''
+let g:clang_auto_user_options = 'path, .clang_complete'
+let g:clang_use_library = 1
+
+" pydiction
+Bundle 'Pydiction'
+let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
+
+" pyflakes
+Bundle 'pyflakes.vim'
+let g:pyflakes_use_quickfix = 0
+
+" pep8
+Bundle 'pep8'
+let g:pep8_map='<leader>8'
+
+" -- easy LaTeX editing
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+
+" -- outlines
+Bundle 'VOoM'
+map     <F10>           :VoomToggle latex<CR>
+let g:voom_tree_width=90
+
+" -- check good writing style
+Bundle 'davidbeckingsale/writegood.vim'
+autocmd BufNewFile,BufRead *.tex             setlocal spell spelllang=en complete+=k dictionary+=/usr/share/dict/words iskeyword+=: sw=4 ts=4|call writegood#enable()
+
+" -- slime
+Bundle 'jpalardy/vim-slime.git'
+let g:slime_target = "tmux"
+
+" -- snippets
+Bundle 'SirVer/ultisnips'
+
+" End vundle plugins config }}}
+
+
 filetype plugin indent on
 
 "set cpoptions=cesWy
@@ -228,80 +311,6 @@ nmap <F3> a<C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR><Esc>
 imap <F3> <C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR>
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" -- let vundle manage itself
-Bundle 'gmarik/vundle'
-
-" -- autocompletion
-"Bundle 'Valloric/YouCompleteMe'
-"let g:ycm_confirm_extra_conf = 0 	" Don't ask if file should be loaded
-
-" -- git wrapper
-Bundle 'fugitive.vim'
-
-" -- show buffers
-Bundle 'minibufexplorerpp'
-let g:miniBufExplorerMoreThanOne = 1
-
-" -- c ifdef block highlighting
-Bundle 'ifdef-highlighting'
-
-" NERDTree options
-Bundle 'scrooloose/nerdtree'
-let NERDTreeIgnore = ['\~$', '\.pyc$', '\.o$']
-nnoremap <leader>nt :NERDTree 
-nnoremap <leader>nb :NERDTreeBookmark 
-nnoremap <leader>nn :NERDTreeToggle<cr>
-nnoremap <leader>nf :NERDTreeFind<cr>
-"let NERDTreeQuitOnOpen = 1
-
-" FuzzyFinder
-" -- L9 is a FuzzyFinder dependency
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-nnoremap <C-p> :FuzzyFinderFile<CR> 
-
-" Clang-complete
-let g:clang_complete_auto = 1
-let g:clang_complete_copen = 1
-let g:clang_hl_errors = 1
-let g:clang_periodic_quickfix = 0
-let g:clang_snippets = 0
-" g:clang_conceal_snippets:
-let g:clang_exec = 'clang'
-let g:clang_user_options = ''
-let g:clang_auto_user_options = 'path, .clang_complete'
-let g:clang_use_library = 1
-
-" pydiction
-Bundle 'Pydiction'
-let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
-
-" pyflakes
-Bundle 'pyflakes.vim'
-let g:pyflakes_use_quickfix = 0
-
-" pep8
-Bundle 'pep8'
-let g:pep8_map='<leader>8'
-
-" -- easy LaTeX editing
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-
-" -- outlines
-Bundle 'VOoM'
-map     <F10>           :VoomToggle latex<CR>
-let g:voom_tree_width=90
-
-" -- check good writing style
-Bundle 'davidbeckingsale/writegood.vim'
-autocmd BufNewFile,BufRead *.tex             setlocal spell spelllang=en complete+=k dictionary+=/usr/share/dict/words iskeyword+=: sw=4 ts=4|call writegood#enable()
 
 " javascript support
 Bundle 'scrooloose/syntastic'
