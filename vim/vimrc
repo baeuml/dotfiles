@@ -23,8 +23,8 @@ Bundle 'gmarik/vundle'
 Bundle 'fugitive.vim'
 
 " -- show buffers
-Bundle 'minibufexplorerpp'
-let g:miniBufExplorerMoreThanOne = 1
+"Bundle 'minibufexplorerpp'
+"let g:miniBufExplorerMoreThanOne = 1
 
 " -- c ifdef block highlighting
 Bundle 'ifdef-highlighting'
@@ -92,6 +92,15 @@ Bundle 'SirVer/ultisnips'
 
 " javascript support
 Bundle 'scrooloose/syntastic'
+
+" -- airline
+Bundle 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts=1
+let g:airline_theme='light'
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
+
 
 " End vundle plugins config }}}
 
@@ -214,7 +223,7 @@ function! SyntaxItem()
   return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
 
-set statusline=%1*[%02n]%*\ %(%M%R%H%)\ %*\Line=%l/%L\ Col=%02c\ %3*\ %t\ %*\ %{SyntaxItem()}\ %=%{Options()}\ %2*\ DEC=%03.3b\ HEX=%02.3B\ %*
+"set statusline=%1*[%02n]%*\ %(%M%R%H%)\ %*\Line=%l/%L\ Col=%02c\ %3*\ %t\ %*\ %{SyntaxItem()}\ %=%{Options()}\ %2*\ DEC=%03.3b\ HEX=%02.3B\ %*
 "set statusline=[%02n]\ %(%M%R%H%)\ \Line=%l/%L\ Col=%02c\ \ %t\ \ %=%{Options()}\ \ DEC=%03.3b\ HEX=%02.3B\ 
 
 fu! Options()
