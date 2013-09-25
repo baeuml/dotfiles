@@ -90,6 +90,9 @@ let g:slime_target = "tmux"
 " -- snippets
 Bundle 'SirVer/ultisnips'
 
+" javascript support
+Bundle 'scrooloose/syntastic'
+
 " End vundle plugins config }}}
 
 
@@ -311,7 +314,4 @@ nmap <F3> a<C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR><Esc>
 imap <F3> <C-R>=strftime("(%Y-%m-%d %a %H:%M)")<CR>
 
 
-
-" javascript support
-Bundle 'scrooloose/syntastic'
 
