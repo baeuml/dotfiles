@@ -4,6 +4,9 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Set leader to something more comfortable
+let mapleader=","
+
 " Vundle Plugin Config {{{
 
 " Call/setup Vundle {{{
@@ -89,6 +92,10 @@ let g:slime_target = "tmux"
 
 " -- snippets
 Bundle 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " javascript support
 Bundle 'scrooloose/syntastic'
@@ -260,9 +267,6 @@ endif
 "" ==========================================================
 "" Key bindings
 "" ==========================================================
-
-" Set leader to something more comfortable
-let mapleader=","
 
 " Disable arrow keys and navigation keys
 nnoremap <up>       <nop>
