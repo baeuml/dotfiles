@@ -103,6 +103,22 @@ function my_prompt_command
 	# Set prompt
 	PS1="${USER_COLOR}\u${GREEN}@${CYAN}\h${RESET}:${LBLUE}${PROMPT_PWD}${LRED}${PROMPT_RC}${PURPLE}${GIT_BRANCH}${RESET}\\\$ "
 
+    if [[ -n "$VIRTUAL_ENV" && -z "$VIRTUAL_ENV_DISABLE_PROMPT" ]] ; then
+        _OLD_VIRTUAL_PS1="$PS1"
+        if [ "x" != x ] ; then
+            PS1="$PS1"
+        else
+        if [ "`basename \"$VIRTUAL_ENV\"`" = "__" ] ; then
+            # special case for Aspen magic directories
+            # see http://www.zetadev.com/software/aspen/
+            PS1="[`basename \`dirname \"$VIRTUAL_ENV\"\``] $PS1"
+        else
+            PS1="${GRAY}(`basename \"$VIRTUAL_ENV\"`)${RESET}$PS1"
+        fi
+        fi
+        export PS1
+    fi
+
 	# Set xterm title and screen title
 	case "$TERM" in
 	xterm*|rxvt*|gnome*|konsole*)
@@ -117,7 +133,7 @@ function my_prompt_command
 	history -a
 }
 
-PROMPT_COMMAND='my_prompt_command'
+PROMPT_COMMAND="my_prompt_command"
 
 # set other shell variables
 export EDITOR=vim
